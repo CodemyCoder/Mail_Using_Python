@@ -3,7 +3,9 @@ import os
 import ssl as secureSSL
 from email.message import EmailMessage
 import smtplib
-
+# Do remember to add your Email-Id and Password In your environment variable.
+# Or
+# You Can directly put Credential here but only for learning purpose.
 User = os.getenv("Gmail_User") # This will fetch User Credentials from your PC's environment variables (Used Just for Security Purpose)
 Pass = os.getenv("Gmail_Pass") # This will fetch User Credentials from your PC's environment variables (Used Just for Security Purpose)
 msg = EmailMessage()
@@ -16,6 +18,7 @@ msg.set_content("Sending attachments using Python") #This Is basically the Body 
 
 
 # File Attachment Concept
+# Do remember to create a directory named media or rename it below or you can use the media folder in this repository.
 FILELIST = os.listdir("./media/") # This will list all the files inside the media directory (** Only the Name of the files and folders --not path-- **)
 for fileName in FILELIST:
     filePath = "./media/" + fileName
